@@ -28,7 +28,8 @@
                 <&macro_press>,
                 <&kp LCTRL &kp LSHFT>,
                 <&macro_tap>,
-                <&kp PG_UP>;
+                <&kp PG_UP>,
+                <&macro_release>;
         };
         brightnessdec: brightnessdec {
             compatible = "zmk,behavior-macro";
@@ -38,7 +39,8 @@
                 <&macro_press>,
                 <&kp LCTRL &kp LEFT_SHIFT>,
                 <&macro_tap>,
-                <&kp PAGE_DOWN>;
+                <&kp PAGE_DOWN>,
+                <&macro_release>;
         };
         brightness100: brightness100 {
             compatible = "zmk,behavior-macro";
@@ -48,7 +50,8 @@
                 <&macro_press>,
                 <&kp LCTRL &kp LEFT_SHIFT &kp LEFT_ALT>,
                 <&macro_tap>,
-                <&kp PAGE_UP>;
+                <&kp PAGE_UP>,
+                <&macro_release>;
         };
         brightness20: brightness20 {
             compatible = "zmk,behavior-macro";
@@ -58,7 +61,8 @@
                 <&macro_press>,
                 <&kp LCTRL &kp LEFT_SHIFT &kp LEFT_ALT>,
                 <&macro_tap>,
-                <&kp PAGE_DOWN>;
+                <&kp PAGE_DOWN>,
+                <&macro_release>;
         };
         cut: cut {
             compatible = "zmk,behavior-macro";
@@ -68,7 +72,8 @@
                 <&macro_press>,
                 <&kp LCTRL>,
                 <&macro_tap>,
-                <&kp X>;
+                <&kp X>,
+                <&macro_release>;
         };
         copy: copy {
             compatible = "zmk,behavior-macro";
@@ -78,7 +83,8 @@
                 <&macro_press>,
                 <&kp LCTRL>,
                 <&macro_tap>,
-                <&kp C>;
+                <&kp C>,
+                <&macro_release>;
         };
         paste: paste {
             compatible = "zmk,behavior-macro";
@@ -88,7 +94,8 @@
                 <&macro_press>,
                 <&kp LCTRL>,
                 <&macro_tap>,
-                <&kp V>;
+                <&kp V>,
+                <&macro_release>;
         };
     };
 
