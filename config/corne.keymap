@@ -25,6 +25,7 @@
             label = "BRIGHTNESSINC";
             #binding-cells = <0>;
             bindings =
+                <&macro_wait_time 40>,
                 <&macro_press>,
                 <&kp LCTRL &kp LSHFT>,
                 <&macro_tap>,
@@ -37,6 +38,7 @@
             label = "BRIGHTNESSDEC";
             #binding-cells = <0>;
             bindings =
+                <&macro_wait_time 40>,
                 <&macro_press>,
                 <&kp LCTRL &kp LEFT_SHIFT>,
                 <&macro_tap>,
@@ -49,6 +51,7 @@
             label = "BRIGHTNESS100";
             #binding-cells = <0>;
             bindings =
+                <&macro_wait_time 40>,
                 <&macro_press>,
                 <&kp LCTRL &kp LEFT_SHIFT &kp LEFT_ALT>,
                 <&macro_tap>,
@@ -61,6 +64,7 @@
             label = "BRIGHTNESS20";
             #binding-cells = <0>;
             bindings =
+                <&macro_wait_time 40>,
                 <&macro_press>,
                 <&kp LCTRL &kp LEFT_SHIFT &kp LEFT_ALT>,
                 <&macro_tap>,
@@ -130,8 +134,8 @@
         Raise_layer {
             bindings = <
  &trans  &kp KP_NUMLOCK  &kp C_AL_CALC  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP        &none  &kp K_CONTEXT_MENU            &kp UP  &brightnessdec  &brightnessinc  &brightness100
-&kp TAB          &paste       &kp HOME     &kp END    &kp DELETE            &none         &cut            &kp LEFT          &kp DOWN       &kp RIGHT     &kp PAGE_UP   &brightness20
- &trans           &none          &none        &cut         &copy            &none        &copy      &kp C_PREVIOUS  &kp C_PLAY_PAUSE      &kp C_NEXT   &kp PAGE_DOWN           &none
+&kp TAB     &kp PAGE_UP       &kp HOME     &kp END    &kp DELETE            &none         &cut            &kp LEFT          &kp DOWN       &kp RIGHT          &paste   &brightness20
+ &trans   &kp PAGE_DOWN          &none       &none         &none            &none        &copy      &kp C_PREVIOUS  &kp C_PLAY_PAUSE      &kp C_NEXT           &none           &none
                                             &trans        &trans        &kp SPACE    &kp ENTER              &trans     &kp BACKSPACE
             >;
         };
