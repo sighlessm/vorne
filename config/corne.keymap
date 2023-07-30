@@ -114,8 +114,8 @@
             label = "ALTTAB";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kt LEFT_ALT>,
                 <&macro_tap>,
                 <&kp TAB &tog 4>;
         };
@@ -125,9 +125,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp ENTER>,
-                <&macro_release>,
-                <&kp LEFT_ALT>,
+                <&kt LEFT_ALT>,
                 <&macro_tap>,
                 <&tog 4>;
         };
@@ -138,11 +136,15 @@
             bindings =
                 <&macro_wait_time 40>,
                 <&macro_press>,
-                <&kp LCTRL &kp LEFT_ALT>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LEFT_ALT>,
                 <&macro_tap>,
                 <&kp DELETE>,
                 <&macro_release>,
-                <&kp LCTRL &kp LEFT_ALT>;
+                <&kp LCTRL>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
         };
     };
 
@@ -167,7 +169,7 @@
             bindings = <
                              &kp LEFT_GUI  &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O  &kp RIGHT_ALT           &kp ESC
                                   &kp TAB  &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L          &kp P     &kp BACKSPACE
-&stickshifttogglecaps LEFT_SHIFT CAPSLOCK  &kp Z  &kp X      &kp V      &kp C      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
+&stickshifttogglecaps CAPSLOCK LEFT_SHIFT  &kp Z  &kp X      &kp V      &kp C      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
                                                          &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
             >;
         };
