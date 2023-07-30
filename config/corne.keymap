@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
 #define LOWER 1
@@ -115,10 +116,10 @@
 
         Base_layer {
             bindings = <
-  &kp LEFT_GUI  &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O   &kp RALT           &kp ESC
-       &kp TAB  &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L      &kp P     &kp BACKSPACE
-&kp LEFT_SHIFT  &kp Z  &kp X      &kp C      &kp V      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp SINGLE_QUOTE
-                              &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
+         &kp LEFT_GUI          &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O  &kp RIGHT_ALT           &kp ESC
+              &kp TAB          &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L          &kp P     &kp BACKSPACE
+&stickshifttogglecaps  &kp SEMICOLON  &kp X      &kp C      &kp V      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
+                                             &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
             >;
         };
 
