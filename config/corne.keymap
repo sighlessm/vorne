@@ -117,20 +117,46 @@
                 <&macro_press>,
                 <&kp LEFT_ALT>,
                 <&macro_tap>,
-                <&kp TAB>,
+                <&kp TAB &tog 4>;
+        };
+        return: return {
+            compatible = "zmk,behavior-macro";
+            label = "RETURN";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp ENTER>,
                 <&macro_release>,
-                <&kp LEFT_ALT>;
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&tog 4>;
+        };
+        ctrlaltdel: ctrlaltdel {
+            compatible = "zmk,behavior-macro";
+            label = "CTRLALTDEL";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 40>,
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp DELETE>,
+                <&macro_release>,
+                <&kp LCTRL &kp LEFT_ALT>;
         };
     };
 
     behaviors {
-        stickshifttogcaps: stickshifttogcaps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "⇧/CAPSLOCK";
-            #binding-cells = <0>;
+        stickshifttogglecaps: stickshifttogglecaps {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKSHIFTTOGGLECAPS";
             bindings =
-                <&sk LEFT_SHIFT>,
-                <&kt CAPSLOCK>;
+                <&sk>,
+                <&kt>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -139,10 +165,10 @@
 
         Base_layer {
             bindings = <
-      &kp LEFT_GUI          &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O  &kp RIGHT_ALT           &kp ESC
-           &kp TAB          &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L          &kp P     &kp BACKSPACE
-&stickshifttogcaps  &kp SEMICOLON  &kp X      &kp V      &kp C      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
-                                          &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
+                             &kp LEFT_GUI  &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O  &kp RIGHT_ALT           &kp ESC
+                                  &kp TAB  &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L          &kp P     &kp BACKSPACE
+&stickshifttogglecaps LEFT_SHIFT CAPSLOCK  &kp Z  &kp X      &kp V      &kp C      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
+                                                         &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
             >;
         };
 
@@ -175,10 +201,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp TAB  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans     &trans  &trans  &trans
             >;
         };
     };
