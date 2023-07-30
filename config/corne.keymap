@@ -136,15 +136,11 @@
             bindings =
                 <&macro_wait_time 40>,
                 <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_press>,
-                <&kp LEFT_ALT>,
+                <&kp LCTRL &kp LEFT_ALT>,
                 <&macro_tap>,
                 <&kp DELETE>,
                 <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_release>,
-                <&kp LEFT_ALT>;
+                <&kp LCTRL &kp LEFT_ALT>;
         };
     };
 
@@ -154,10 +150,21 @@
             label = "STICKSHIFTTOGGLECAPS";
             #binding-cells = <0>;
             bindings =
-                <&sk LEFT_SHIFT>,
+                <&stickshift LEFT_SHIFT LEFT_SHIFT>,
                 <&kp CAPSLOCK>;
 
             tapping-term-ms = <400>;
+        };
+        stickshift: stickshift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKSHIFT";
+            bindings =
+                <&sk>,
+                <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
         };
     };
 
@@ -166,10 +173,10 @@
 
         Base_layer {
             bindings = <
-                             &kp LEFT_GUI  &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O  &kp RIGHT_ALT           &kp ESC
-                                  &kp TAB  &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L          &kp P     &kp BACKSPACE
-&stickshifttogglecaps CAPSLOCK LEFT_SHIFT  &kp Z  &kp X      &kp V      &kp C      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
-                                                         &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
+         &kp LEFT_GUI  &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O  &kp RIGHT_ALT           &kp ESC
+              &kp TAB  &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L          &kp P     &kp BACKSPACE
+&stickshifttogglecaps  &kp Z  &kp X      &kp V      &kp C      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
+                                     &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
             >;
         };
 
