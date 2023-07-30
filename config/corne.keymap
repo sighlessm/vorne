@@ -115,7 +115,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kt LEFT_ALT>,
+                <&kt LALT>,
                 <&macro_tap>,
                 <&kp TAB &tog 4>;
         };
@@ -125,7 +125,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp LEFT_ALT>,
+                <&kt LALT>,
                 <&macro_tap>,
                 <&tog 4>;
         };
@@ -150,21 +150,10 @@
             label = "STICKSHIFTTOGGLECAPS";
             #binding-cells = <0>;
             bindings =
-                <&stickshift LEFT_SHIFT LEFT_SHIFT>,
+                <&sk LEFT_SHIFT>,
                 <&kp CAPSLOCK>;
 
             tapping-term-ms = <400>;
-        };
-        stickshift: stickshift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "STICKSHIFT";
-            bindings =
-                <&sk>,
-                <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <300>;
         };
     };
 
