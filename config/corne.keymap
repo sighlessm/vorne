@@ -111,15 +111,26 @@
         };
     };
 
+    behaviors {
+        stickshifttogcaps: stickshifttogcaps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "⇧/CAPSLOCK";
+            #binding-cells = <0>;
+            bindings =
+                <&sk LEFT_SHIFT>,
+                <&kt CAPSLOCK>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         Base_layer {
             bindings = <
-         &kp LEFT_GUI          &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O  &kp RIGHT_ALT           &kp ESC
-              &kp TAB          &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L          &kp P     &kp BACKSPACE
-&stickshifttogglecaps  &kp SEMICOLON  &kp X      &kp C      &kp V      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
-                                             &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
+      &kp LEFT_GUI          &kp Q  &kp W      &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I       &kp O  &kp RIGHT_ALT           &kp ESC
+           &kp TAB          &kp A  &kp S      &kp D      &kp F      &kp G        &kp H      &kp J      &kp K       &kp L          &kp P     &kp BACKSPACE
+&stickshifttogcaps  &kp SEMICOLON  &kp X      &kp C      &kp V      &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD      &kp SLASH  &kp SINGLE_QUOTE
+                                          &kp LCTRL  &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE   &kp SEMI
             >;
         };
 
