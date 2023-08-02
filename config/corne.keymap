@@ -125,9 +125,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kt LALT>,
+                <&tog 4>,
                 <&macro_tap>,
-                <&tog 4>;
+                <&kt LALT>;
         };
         ctrlaltdel: ctrlaltdel {
             compatible = "zmk,behavior-macro";
