@@ -7,6 +7,10 @@
 #define RAISE 2
 #define BOTH 3
 
+&sk {
+    quick-release;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
