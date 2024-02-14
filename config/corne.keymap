@@ -7,9 +7,7 @@
 #define RAISE 2
 #define BOTH 3
 
-&sk {
-    quick-release;
-};
+&sk { quick-release; };
 
 / {
     combos {
@@ -37,6 +35,7 @@
                 <&macro_release>,
                 <&kp LCTRL &kp LEFT_SHIFT>;
         };
+
         brightnessdec: brightnessdec {
             compatible = "zmk,behavior-macro";
             label = "BRIGHTNESSDEC";
@@ -50,6 +49,7 @@
                 <&macro_release>,
                 <&kp LCTRL &kp LEFT_SHIFT>;
         };
+
         brightness100: brightness100 {
             compatible = "zmk,behavior-macro";
             label = "BRIGHTNESS100";
@@ -63,6 +63,7 @@
                 <&macro_release>,
                 <&kp LCTRL &kp LEFT_SHIFT &kp LEFT_ALT>;
         };
+
         brightness20: brightness20 {
             compatible = "zmk,behavior-macro";
             label = "BRIGHTNESS20";
@@ -76,6 +77,7 @@
                 <&macro_release>,
                 <&kp LCTRL &kp LEFT_SHIFT &kp LEFT_ALT>;
         };
+
         cut: cut {
             compatible = "zmk,behavior-macro";
             label = "CUT";
@@ -88,6 +90,7 @@
                 <&macro_release>,
                 <&kp LCTRL>;
         };
+
         copy: copy {
             compatible = "zmk,behavior-macro";
             label = "COPY";
@@ -100,6 +103,7 @@
                 <&macro_release>,
                 <&kp LCTRL>;
         };
+
         paste: paste {
             compatible = "zmk,behavior-macro";
             label = "PASTE";
@@ -112,6 +116,7 @@
                 <&macro_release>,
                 <&kp LCTRL>;
         };
+
         alttab: alttab {
             compatible = "zmk,behavior-macro";
             label = "ALTTAB";
@@ -122,12 +127,14 @@
                 <&macro_tap>,
                 <&kp TAB &tog 4>;
         };
+
         return: return {
             compatible = "zmk,behavior-macro";
             label = "RETURN";
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&tog 4>, <&macro_release>, <&kp LEFT_ALT>;
         };
+
         ctrlaltdel: ctrlaltdel {
             compatible = "zmk,behavior-macro";
             label = "CTRLALTDEL";
@@ -141,6 +148,7 @@
                 <&macro_release>,
                 <&kp LCTRL &kp LEFT_ALT>;
         };
+
         taskmngr: taskmngr {
             compatible = "zmk,behavior-macro";
             label = "TASKMNGR";
@@ -157,11 +165,11 @@
     };
 
     behaviors {
-        stickshifttogglecaps: stickshifttogglecaps {
+        shifttogglecaps: shifttogglecaps {
             compatible = "zmk,behavior-tap-dance";
-            label = "STICKSHIFTTOGGLECAPS";
+            label = "SHIFTTOGGLECAPS";
             #binding-cells = <0>;
-            bindings = <&sk LEFT_SHIFT>, <&kp CAPSLOCK>;
+            bindings = <&kp LEFT_SHIFT>, <&kp CAPSLOCK>;
 
             tapping-term-ms = <400>;
         };
@@ -172,10 +180,10 @@
 
         Base_layer {
             bindings = <
-&kp LEFT_ALT           &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O       &kp SEMICOLON  &kp ESC
-&kp TAB                &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L       &kp P          &kp BACKSPACE
-&stickshifttogglecaps  &kp Z  &kp X  &kp V      &kp C  &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD  &kp SLASH      &kp SINGLE_QUOTE
-                                     &kp LCTRL  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp RGUI
+&kp LEFT_ALT      &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O       &kp SEMICOLON  &kp ESC
+&kp TAB           &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L       &kp P          &kp BACKSPACE
+&shifttogglecaps  &kp Z  &kp X  &kp V      &kp C  &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD  &kp SLASH      &kp SINGLE_QUOTE
+                                &kp LCTRL  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp RGUI
             >;
         };
 
@@ -190,10 +198,10 @@
 
         Raise_layer {
             bindings = <
-&ctrlaltdel  &none          &kp PRINTSCREEN  &kp C_MUTE           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &alttab  &kp K_CONTEXT_MENU  &kp UP            &none       &brightnessdec  &brightnessinc
-&trans       &kp PAGE_DOWN  &kp PAGE_UP      &kp HOME             &kp END            &kp DELETE         &copy    &kp LEFT            &kp DOWN          &kp RIGHT   &paste          &trans
-&trans       &none          &kp KP_NUMLOCK   &kp C_AL_CALCULATOR  &taskmngr          &none              &cut     &kp C_PREVIOUS      &kp C_PLAY_PAUSE  &kp C_NEXT  &brightness20   &brightness100
-                                             &trans               &trans             &trans             &trans   &trans              &trans
+&trans  &none          &kp PRINTSCREEN  &kp C_MUTE           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &alttab  &kp K_CONTEXT_MENU  &kp UP            &none       &brightnessdec  &brightnessinc
+&trans  &kp PAGE_DOWN  &kp PAGE_UP      &kp HOME             &kp END            &kp DELETE         &copy    &kp LEFT            &kp DOWN          &kp RIGHT   &paste          &ctrlaltdel
+&trans  &none          &kp KP_NUMLOCK   &kp C_AL_CALCULATOR  &taskmngr          &none              &cut     &kp C_PREVIOUS      &kp C_PLAY_PAUSE  &kp C_NEXT  &brightness20   &brightness100
+                                        &trans               &trans             &trans             &trans   &trans              &trans
             >;
         };
 
