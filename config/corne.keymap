@@ -126,7 +126,8 @@
                 <&kp LEFT_ALT>,
                 <&macro_tap>,
                 <&kp TAB>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_ALT>;
         };
 
         return: return {
