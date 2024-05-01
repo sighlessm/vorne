@@ -15,7 +15,7 @@
 
         bluetooth_layer {
             bindings = <&mo 3>;
-            key-positions = <36 40 24>;
+            key-positions = <36 40 12>;
             layers = <0 1 2>;
             timeout-ms = <150>;
         };
