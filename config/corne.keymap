@@ -166,26 +166,15 @@
         };
     };
 
-    behaviors {
-        shifttogglecaps: shifttogglecaps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHIFTTOGGLECAPS";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPSLOCK>;
-
-            tapping-term-ms = <400>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         Base_layer {
             bindings = <
-&kp LEFT_ALT      &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O       &kp SEMICOLON  &kp ESC
-&kp TAB           &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L       &kp P          &kp BACKSPACE
-&shifttogglecaps  &kp Z  &kp X  &kp V      &kp C  &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD  &kp SLASH      &kp SINGLE_QUOTE
-                                &kp LCTRL  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp RGUI
+&kp LEFT_ALT    &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O       &kp SEMICOLON  &kp ESC
+&kp TAB         &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L       &kp P          &kp BACKSPACE
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp V      &kp C  &kp B        &kp N      &kp M  &kp COMMA  &kp PERIOD  &kp SLASH      &kp SINGLE_QUOTE
+                              &kp LCTRL  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp RGUI
             >;
         };
 
@@ -200,10 +189,10 @@
 
         Raise_layer {
             bindings = <
-&trans  &none          &kp PRINTSCREEN  &kp C_MUTE           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &alttab  &kp K_CONTEXT_MENU  &kp UP            &none       &brightnessdec  &brightnessinc
-&trans  &kp PAGE_DOWN  &kp PAGE_UP      &kp HOME             &kp END            &kp DELETE         &copy    &kp LEFT            &kp DOWN          &kp RIGHT   &paste          &trans
-&trans  &none          &kp KP_NUMLOCK   &kp C_AL_CALCULATOR  &taskmngr          &ctrlaltdel        &cut     &kp C_PREVIOUS      &kp C_PLAY_PAUSE  &kp C_NEXT  &brightness20   &brightness100
-                                        &trans               &trans             &trans             &trans   &trans              &trans
+&trans        &none          &kp PRINTSCREEN  &kp C_MUTE           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &alttab  &kp K_CONTEXT_MENU  &kp UP            &none       &brightnessdec  &brightnessinc
+&trans        &kp PAGE_DOWN  &kp PAGE_UP      &kp HOME             &kp END            &kp DELETE         &copy    &kp LEFT            &kp DOWN          &kp RIGHT   &paste          &trans
+&kp CAPSLOCK  &none          &kp KP_NUMLOCK   &kp C_AL_CALCULATOR  &taskmngr          &ctrlaltdel        &cut     &kp C_PREVIOUS      &kp C_PLAY_PAUSE  &kp C_NEXT  &brightness20   &brightness100
+                                              &trans               &trans             &trans             &trans   &trans              &trans
             >;
         };
 
