@@ -10,16 +10,7 @@
 &sk { quick-release; };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        bluetooth_layer {
-            bindings = <&mo 3>;
-            key-positions = <36 40 24>;
-            layers = <0 1 2>;
-            timeout-ms = <150>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         brightnessinc: brightnessinc {
@@ -189,19 +180,19 @@
 
         Raise_layer {
             bindings = <
-&trans  &none          &kp PRINTSCREEN  &kp C_MUTE           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &alttab  &kp K_CONTEXT_MENU  &kp UP            &none       &brightnessdec  &brightnessinc
+&trans  &tog 3         &kp PRINTSCREEN  &kp C_MUTE           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &alttab  &kp K_CONTEXT_MENU  &kp UP            &none       &brightnessdec  &brightnessinc
 &trans  &kp PAGE_DOWN  &kp PAGE_UP      &kp HOME             &kp END            &kp DELETE         &copy    &kp LEFT            &kp DOWN          &kp RIGHT   &paste          &trans
 &trans  &kp CAPSLOCK   &kp KP_NUMLOCK   &kp C_AL_CALCULATOR  &taskmngr          &ctrlaltdel        &cut     &kp C_PREVIOUS      &kp C_PLAY_PAUSE  &kp C_NEXT  &brightness20   &brightness100
                                         &trans               &trans             &trans             &trans   &trans              &trans
             >;
         };
 
-        ctrl_+_upper {
+        bluetooth {
             bindings = <
-&none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
-&none  &bt BT_CLR    &none         &none         &none         &none           &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none  &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
-                                   &none         &none         &none           &none         &none         &none
+&none  &tog 3      &none  &none  &none  &none    &none  &none         &none         &none         &none         &none
+&none  &bt BT_CLR  &none  &none  &none  &none    &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&none  &none       &none  &none  &none  &none    &none  &none         &none         &none         &none         &none
+                          &none  &none  &none    &none  &none         &none
             >;
         };
     };
